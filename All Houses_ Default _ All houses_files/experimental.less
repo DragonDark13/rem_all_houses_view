@@ -122,7 +122,9 @@ display: flex;
 
 .rem_search,
 #pagenavig,
-.search_map_layout{
+.search_map_layout,
+.sidebar-right,
+.sidebar-left{
   outline: 1px solid #999;
 }
 
@@ -144,6 +146,11 @@ display: flex;
     margin-left: 2%;
   }
 
+  [dir="rtl"] & .rem_search {
+    margin-left: 0px;
+    margin-right: 2%;
+  }
+
 
   &.reverse{
 
@@ -155,6 +162,12 @@ display: flex;
       .order(0);
       margin-left: 0px;
       margin-right: 2%;
+    }
+
+    [dir="rtl"] & .rem_search {
+    .order(0);
+    margin-left: 2%;
+    margin-right: 0;
     }
 
   }
@@ -171,6 +184,10 @@ display: flex;
 
         .rem_search{
         margin-left: 0px;
+        }
+
+        [dir="rtl"] & .rem_search{
+          margin-right: 0;
         }
 
     }
@@ -318,9 +335,21 @@ display: flex;
     #pagenavig{
       .flex-order(3);
     }
-
   }
+}
 
+
+/* Sidbar */
+
+
+// .sidebar-right,
+// .sidebar-left{
+//   display: none;
+// }
+
+
+#globalContent>.row{
+  .flexbox();
 }
 
 

@@ -104,7 +104,7 @@ h6 {font-family:"Roboto";}
 
         <div class="button_container controls row">
 
-            <div class="collumn col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="collumn col-xs-12 col-sm-6 col-md-3 col-lg-2">
                 <h4>Count Row Houses</h4>
                 <button class="btn one_column">1</button>
                 <button class="btn two_column">2</button>
@@ -113,7 +113,7 @@ h6 {font-family:"Roboto";}
                 <button class="btn four_column">5</button>
             </div>
 
-            <div class="view_type col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="view_type col-xs-12 col-sm-6 col-md-3 col-lg-2">
                 <h4>Views</h4>
                 <button class="btn">default</button>
                 <button class="btn">default-reverse</button>
@@ -122,15 +122,22 @@ h6 {font-family:"Roboto";}
                 <button class="btn">map-reverse</button>
             </div>
 
-            <div class="additional col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="additional col-xs-12 col-sm-6 col-md-3 col-lg-2">
                 <h4>Direction</h4>
                 <button class="btn direction">direction</button>
             </div>
 
-            <div class="layout col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                <h4>Layout</h4>
+            <div class="search-controls col-xs-12 col-sm-6 col-md-3 col-lg-2">
+                <h4>Search</h4>
                 <button class="btn search">search</button>
                 <button class="btn search-ordering">search-reverse</button>
+            </div>
+
+             <div class="sidebar-controls col-xs-12 col-sm-6 col-md-3 col-lg-2">
+                <h4>Sidebars</h4>
+                <button class="btn sidebar_left">sidebar-left</button>
+                <button class="btn sidebar_right">sidebar-right</button>
+                <button class="btn sidebar_left_right">sidebar-left+sidebar-right</button>
             </div>
 
 
@@ -183,12 +190,17 @@ h6 {font-family:"Roboto";}
 
 				
 			    <div class="row">
-					
-						<div id="contentBox" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+
+					<div class="sidebar-left col-lg-3 col-md-3 col-sm-3 col-xs-12">
+					</div>
+
+					<div id="contentBox" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							
-							<div><div id="system-message-container">
-	</div>
-</div>
+					<div>
+						<div id="system-message-container">
+						</div>
+					</div>
 							<div><script type="text/javascript">
     function rem_rent_request_submitbutton() {
         var form = document.userForm;
@@ -758,7 +770,12 @@ h6 {font-family:"Roboto";}
 						</div>
                         </div>
 
+						<div class="sidebar-right col-lg-3 col-md-3 col-sm-3 col-xs-12">
+						</div>
+
 								    </div>
+
+
 
 				
 			</div> <!--globalContent-->

@@ -52,8 +52,10 @@ jQuery(document).ready(function () {
 
      /* Hide Additional section */
 
-     jQuery(".search_map_layout").addClass("hide");
-     
+     jQuery(".search_map_layout, .sidebar-left, .sidebar-right").addClass("hide");
+     var sideBarLeft = jQuery(".sidebar-left"),
+      sideBarRight = jQuery(".sidebar-right"),
+      centralContent = jQuery("#contentBox");
 
 
 /* Switch Count Column Houses */
@@ -147,7 +149,7 @@ jQuery(document).ready(function () {
 
      /* Switch Layout */
 
-     jQuery(".layout .btn").click(function(event) {
+     jQuery(".search-controls .btn, .sidebar-controls .btn").click(function(event) {
          /* Act on the event */
          maxMargin( jQuery('.okno_R'));
      });
@@ -172,17 +174,95 @@ jQuery(document).ready(function () {
          /* Act on the event */
          jQuery(".house_container>.row-fluid").toggleClass('reverse');
      });
+
+     /* Sidebars */
+
+     jQuery(".sidebar-controls .btn").click(function(event) {
+    /* Act on the event */
+
+    if (jQuery(this).hasClass('sidebar_left') || jQuery(this).hasClass('sidebar_right') ) {
+        // statement
+
+        if (jQuery(this).hasClass('sidebar_left')) {
+        // statement
+
+            var activeBlock = sideBarLeft,
+            hideBlock = sideBarRight;
+
+        }
+
+        else if (jQuery(this).hasClass('sidebar_right')) {
+
+            var activeBlock = sideBarRight,
+            hideBlock = sideBarLeft;
+
+        }
+
+        if (sideBarLeft.is(':visible')==true && sideBarRight.is(':visible')==true)
+        {
+            centralContent.removeClass('col-lg-6 col-md-6 col-sm-6');
+        }
+
+        else if (activeBlock.hasClass('hide')) {
+
+            centralContent.removeClass('col-lg-12 col-md-12 col-sm-12');
+
+        }
+
+
+        if
+        (activeBlock.hasClass('hide') || sideBarLeft.is(':visible')==true && sideBarRight.is(':visible')==true) {
+        // statement
+            activeBlock.removeClass('hide');
+            centralContent.addClass('col-lg-9 col-md-9 col-sm-9');
+            hideBlock.addClass("hide");
+
+        } else {
+        // statement
+            activeBlock.addClass('hide');
+            centralContent.addClass('col-lg-12 col-md-12 col-sm-12').removeClass('col-lg-9 col-md-9 col-sm-9');
+        }
+
+    } else {
+        // statement
+    }
+
+    });
+
+     jQuery(".btn.sidebar_left_right").click(function(event) {
+
+        if (sideBarLeft.is(':visible')==true || sideBarRight.is(':visible')==true) {
+            centralContent.addClass('col-lg-6 col-md-6 col-sm-6').removeClass('col-lg-9 col-md-9 col-sm-9');
+        }
+        
+        if (sideBarLeft.is(':hidden')==true && sideBarRight.is(':hidden')==true ) {
+        // statement
+            centralContent.addClass('col-lg-6 col-md-6 col-sm-6').removeClass('col-lg-12 col-md-12 col-sm-12');
+        } 
+        if (sideBarLeft.is(':visible')==true && sideBarRight.is(':visible')==true ) {
+
+            centralContent.removeClass('col-lg-6 col-md-6 col-sm-6').addClass('col-lg-12 col-md-12 col-sm-12');
+
+        }
+
+        if  (sideBarLeft.is(':visible')==true && sideBarRight.is(':visible')==true ) {
+        // statement
+            sideBarRight.addClass('hide');
+            sideBarLeft.addClass("hide");
+
+        } else {
+
+            sideBarRight.removeClass('hide');
+            sideBarLeft.removeClass("hide");
+        }
+        
+     });
+
+
+     
      
 
  });
 
-// (function ($){
-
-//     $(window).on('load', function () {
-//         var $preloader = $('#prelouder'),
-//             $spinner   = $preloader.find('.spinner');
-//         $spinner.fadeOut();
-//         $preloader.delay(350).fadeOut('slow');
-//     });
 
 // })(jQuery);
