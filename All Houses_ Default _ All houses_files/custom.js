@@ -28,7 +28,7 @@ jQuery(document).ready(function () {
 
 /* Active Count Column Houses */
 
- var countCollumn = 5;
+ var countCollumn = 4;
  jQuery(".okno_R").attr('data-columns', countCollumn);
  jQuery('.controls .collumn .btn:contains('+countCollumn+')').addClass('active');
 

@@ -1,0 +1,157 @@
+
+
+.navbar-fixed-top.navbar{
+  background: #ccc;
+  padding: 10px;
+}
+
+
+.rem_search,
+#pagenavig,
+.search_map_layout,
+.sidebar-right,
+.sidebar-left{
+  outline: 1px solid #999;
+}
+
+
+    .search_map_layout{
+      .flex-basis(100%);
+      margin-bottom: 10px;
+    }
+
+/* Sidbar */
+
+#globalContent>.row{
+  .flexbox();
+}
+
+
+
+
+
+
+
+#real_estate_container{
+.flexbox;  
+.flex-wrap(wrap);
+.flex-direction(column);
+
+    &[data-view*='list']{
+
+        #gallery_rem{
+        .flex-wrap(wrap);
+        .flex-direction(column);
+        display: block;
+        }
+
+        #gallery_rem .okno_R{
+        margin-left: 0px;
+        .flex-basis(100%);
+        width: 100% !important;
+        .flexbox();
+        .flex-wrap(nowrap);
+        .flex-direction(row);
+        padding: 15px;
+        }
+
+        #gallery_rem .okno_R #divamage {
+        width: 30% !important;
+        }
+
+        #gallery_rem .okno_R .real_text{
+        .flex-basis(70%);
+        .flexbox;
+        .flex-wrap(wrap);
+        .flex-direction(column);
+        .justify-content(space-around);
+        }
+
+        @media (max-width: 1201px ){
+
+              #gallery_rem .okno_R #divamage {
+                width: 40% !important;
+              }
+         }
+
+         @media (max-width: 991px ){
+
+              #gallery_rem .okno_R #divamage {
+                width: 45% !important;
+              }
+         }
+
+         @media (max-width: 748px) {
+
+            #gallery_rem .okno_R #divamage {
+            width: 50% !important;
+            }
+         }
+
+         @media (max-width: 642px) {
+
+            #gallery_rem .okno_R  {
+            .flex-direction(column);
+            }
+
+            #gallery_rem .okno_R #divamage {
+            width: 100% !important;
+            }
+         }
+    }
+
+  &[data-view*='map']{
+  .flex-direction(row);
+
+      .componentheading{
+        .flex-basis(100%);
+      }
+
+      #map_canvas,
+      .house_container{
+        .flex-basis(50%);
+      }
+
+      #map_canvas{
+        height: 820px;
+      }
+
+       #gallery_rem{
+        overflow: auto;
+        height: 720px;
+      }
+
+      #pagenavig{
+        .flex-basis(100%);
+      }
+
+      #ShowOrderBy{
+        margin-bottom: 19px;
+      }
+
+      @media (max-width: 992px ) {
+        .flex-direction(column);
+        .flex-wrap(nowrap);
+        
+      }
+  }
+
+  &[data-view*='reverse']{
+
+    .componentheading{
+      .flex-order;
+    }
+
+    #map_canvas{
+      .flex-order(2);
+    }
+
+    .house_container{
+      .flex-order(1);
+    }
+
+    #pagenavig{
+      .flex-order(3);
+    }
+  }
+}

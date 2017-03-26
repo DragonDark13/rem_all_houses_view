@@ -1,0 +1,141 @@
+/* Search */
+
+
+.house_container>.row-fluid{
+  .flexbox;
+  .flex-wrap;
+  .flex-direction;
+
+  .rem_all_houses_block.span9{
+    .flex-basis(75%);
+  }
+
+  .rem_search{
+    .flex-basis(23%);
+    margin-left: 2%;
+  }
+
+  [dir="rtl"] & .rem_search {
+    margin-left: 0px;
+    margin-right: 2%;
+  }
+
+
+  &.reverse{
+
+    .rem_all_houses_block.span9{
+      .order(1);
+    }
+
+    .rem_search{
+      .order(0);
+      margin-left: 0px;
+      margin-right: 2%;
+    }
+
+    [dir="rtl"] & .rem_search {
+    .order(0);
+    margin-left: 2%;
+    margin-right: 0;
+    }
+
+  }
+
+    @media (max-width: 991px ) {
+    .flex-direction(column);
+
+        .rem_all_houses_block.span9,
+        .rem_search{
+        .flex-basis(100%);
+        width: 100%;
+        }
+
+        .rem_search{
+        margin-left: 0px;
+        }
+
+        [dir="rtl"] & .rem_search{
+          margin-right: 0;
+        }
+
+    }
+
+}
+
+#contentBox {
+
+
+
+    .media_max(@global_resolution_1_min,{
+
+        &.col-lg-{
+
+            &8,
+            &7,
+            &6,
+            &5,
+            &4,
+            &3,
+            &2,
+            &1{
+
+            .house_container>.row-fluid{
+            .flex-direction(column);
+            }
+
+            .rem_all_houses_block.span9,
+            .rem_search{
+            .flex-basis(100%);
+            width: 100%;
+            }
+
+            .rem_search{
+            margin-left: 0px;
+            }
+
+            [dir="rtl"] & .rem_search{
+            margin-right: 0;
+            }
+            }
+        }
+
+    });
+
+
+    .media_max_min(@global_resolution_2,@global_resolution_2_min{
+
+        &.col-md-{
+
+            &9,
+            &8,
+            &7,
+            &6,
+            &5,
+            &4,
+            &3,
+            &2,
+            &1{
+
+            .house_container>.row-fluid{
+            .flex-direction(column);
+            }
+
+            .rem_all_houses_block.span9,
+            .rem_search{
+            .flex-basis(100%);
+            width: 100%;
+            }
+
+            .rem_search{
+            margin-left: 0px;
+            }
+
+            [dir="rtl"] & .rem_search{
+            margin-right: 0;
+            }
+            }
+        }
+
+    });
+    
+}
